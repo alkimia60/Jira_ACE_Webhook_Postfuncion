@@ -1,0 +1,44 @@
+{
+  "key": "atlassian-connect-spring-boot-sample-basic",
+  "baseUrl": "https://a1ed59d8.ngrok.io",
+  "name": "Atlassian Connect Spring Boot Basic Sample",
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed",
+    "uninstalled": "/uninstalled"
+  },
+  "modules": {
+    "jiraWorkflowPostFunctions": [
+      {
+        "key": "wf-pf-test",
+        "triggered": {
+          "url": "/triggered"
+        },
+         "view": {
+          "url": "/view"
+        },
+        "edit": {
+          "url": "/edit"
+        },
+        "create": {
+          "url": "/create"
+        },
+        "name":{
+        	"value":"My Funtion Sergio"
+        }
+      }
+    ],
+      "webhooks": [
+      {
+        "event": "jira:worklog_updated",
+        "url": "/worklogupdate",
+        "excludeBody": false,
+        "filter": "project = TEST"
+       }
+    ]
+   
+  },
+  "scopes": ["READ","WRITE","ACT_AS_USER"]
+}

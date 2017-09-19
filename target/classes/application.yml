@@ -1,0 +1,12 @@
+spring.jpa.hibernate.ddl-auto: update
+spring.datasource.url: jdbc:hsqldb:file:addon-db # Use a file-based backing store for HSQL
+
+addon.base-url: http://localhost:${local.server.port}
+
+logging.level.com.atlassian.connect.spring: DEBUG
+
+security:
+  basic:
+    path: /basic
+    enabled: true
+  ignored: /public
